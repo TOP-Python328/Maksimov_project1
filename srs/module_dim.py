@@ -1,4 +1,5 @@
 from utils import center_text, generating_spaces, reading_players
+from module_help import help_fun
 
 dim = 3 # размер игрового поля
 
@@ -20,5 +21,6 @@ def dim_fun():
         else:
             global dim
             dim = int(comand)
+            help_fun()
             break
     return dim_fun

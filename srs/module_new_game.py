@@ -27,12 +27,11 @@ def single_player_fun():
     # цыкл выбора сложности игры
     while True:
         comand = input('выберите сложность игры: ')
+        global game_mode
         if comand == 'e':
-            global game_mode
             game_mode = "easy"
             break
         if comand == 'h':
-            global game_mode
             game_mode = "hard"
             break
         if comand not in ['e', 'h']:
@@ -53,6 +52,7 @@ def single_player_fun():
     # цыкл выбора токена в одиночной игре
     while True:
         comand = input('выберите токен для игрока №1: ')
+        global Token
         if comand == 'x':
             Token = "X"
             break
@@ -64,10 +64,10 @@ def single_player_fun():
             print(f'{whitespaces}Такой команды не существует')
     
     # запуск одиночной игры
-    return play_game_players(1)
+    return play_game_players('new_game', 1)
     
 def game_of_two_fun():
-    """Функция одиночной игры"""
+    """Функция игры в двоем"""
     texts = list()
     texts.append('======================== ИГРА В ДВОЁМ =========================')
     texts.append('                                                               ')
@@ -120,6 +120,7 @@ def game_of_two_fun():
     # цыкл выбора токена в игре вдвоем
     while True:
         comand = input('выберите свой токен: ')
+        global Token
         if comand == 'x':
             Token = "X"
             break
@@ -131,7 +132,7 @@ def game_of_two_fun():
             print(f'{whitespaces}Такой команды не существует')
     
     # запуск игры в двоем
-    play_game_players(2)
+    play_game_players('new_game', 2)
 
     return game_of_two_fun
 
